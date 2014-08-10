@@ -29,7 +29,7 @@ define(['app', 'services/SpinnerService', 'services/RecipeService', 'services/In
 				$timeout(function(){
 					$.ajax({
 						type:'POST',
-						url: document.location.origin + '/dummy',
+						url: document.location.origin + '/search',
 						data: InputService.get(),
 						dataType: "json"
 					})

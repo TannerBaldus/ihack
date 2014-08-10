@@ -13,7 +13,7 @@ define(['app', 'services/SpinnerService', 'services/RecipeService', 'services/In
 			if(form.$valid){
 				$.ajax({
 					type:'POST',
-					url: document.location.origin + '/dummy',
+					url: document.location.origin + '/search',
 					data: {
 						num: $scope.num,
 						budget: $scope.budget,
