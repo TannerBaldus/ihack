@@ -4,7 +4,36 @@ import random
 import itertools
 
 
-
+good_items= ["Lebanese Falafel II",
+"Papaya Salad",
+"Ampalaya Salad",
+"Shish Kabab Mishwi",
+"Japanese Gyoza",
+"Cucumber Soup I",
+"Suman",
+"Tinolang Tahong",
+"Iranian Barley Soup",
+"Ajvar",
+"Laing",
+"Lahmacun",
+"Baklawa",
+"Daigakuimo",
+"Nikhaat bil hamod wal-zayt",
+"Soba Noodles with Mushrooms",
+"Yakisoba",
+"Kare Kare",
+"Bistek Tagalog",
+"Dilis",
+"Azuki Shiratama",
+"Baklawa",
+"Chicken Pork Adobo",
+"Samosa",
+"Puto",
+"Australian Bitterballen with Red Desert Dust",
+"Labanos Salad",
+"Kutsinta",
+"Bopis",
+"Kasutera"]
 
 class RecipeManager(models.Manager):
 
@@ -27,7 +56,14 @@ class RecipeManager(models.Manager):
         recipe_count = self.count()
         ids = [index(recipe_count) for i in range(6)]
         return Recipe.objects.filter(id__in=ids)
-        
+
+
+    def good_pic_group(self):
+        """SInce so many wikia pics are so awful just pick recipes from 
+        the goof pic group"""
+        global good_items
+        titles = [random.choice(good_items) for i in range(6)]
+        return Recipe.objects.filter(title__in=titles)
 
 
 
