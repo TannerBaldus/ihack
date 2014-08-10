@@ -5,15 +5,18 @@ require.config({
 	paths: {
 		angular: '../lib/angular/angular',
 		angularRoute: '../lib/angular/angular-route',
+		angularStorage: '../lib/angular/angular-storage',
 		foundation: '../lib/foundation/foundation.min',
-		jquery: '../lib/jquery/jquery-1.11.1.min'
+		jquery: '../lib/jquery/jquery-1.11.1.min',
+		modernizr: '../lib/vendor/modernizr'
 	},
 	shim: {
 		'foundation': ['jquery'],
 		'angular': {
 			exports: 'angular'
 		},
-		'angularRoute': ['angular']
+		'angularRoute': ['angular'],
+		'angularStorage': ['angular']
 	}
 });
 
