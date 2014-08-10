@@ -29,13 +29,6 @@ class RecipeManager(models.Manager):
         return Recipe.objects.filter(id__in=ids)
         
 
-
-
-
-
-
-
-
     def get_random_serving_group(self,people,meals):
         """ """
         target_servings = people*meals
