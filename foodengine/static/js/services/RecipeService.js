@@ -17,10 +17,15 @@ define(['app', 'modernizr'], function (app) {
 			return recipes;
 		};
 		this.set = function(data) {
-			recipes = data;
+			recipes = [];
+			for (var i=0; i<data.length; i++){
+				var fields = data[i].fields;
+				fields.image_url = fields.image_url.replace('/thumb', '');
+				recipes.push(fields);
+			}
 			if (Modernizr.localstorage) {
 				// stringify data and store it
-				localStorage.setItem('recipes', JSON.stringify(data));
+				localStorage.setItem('recipes', JSON.stringify(recipes));
 			}
 		};
 	

@@ -1,9 +1,9 @@
 <div class="view-container">
-	<div class="recipes-container row">
+	<div class="recipes-container row" data-equalizer>
 		<div class="columns large-4 medium-4 small-12 recipe" ng-repeat="recipe in recipes" on-finish-render>
 			<div class="row">
 				<div class="columns large-12">
-					<img ng-src="[[ recipe.image_url ]]"></img>
+					<img ng-src="[[ recipe.image_url ]]" data-equalizer-watch></img>
 				</div>
 				<div class="columns large-12">
 					<p class="center">[[ recipe.title ]]</p>

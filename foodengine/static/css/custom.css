@@ -44,6 +44,11 @@ body.background {
 /*  	height: 100%;*/
 }
 
+.recipes-container img {
+	width: 100%;
+	height: 15em;
+}
+
 
 .view-container {
 	padding-top: 5em;

@@ -1,4 +1,4 @@
-define(['app', 'services/SpinnerService', 'services/RecipeService', 'services/InputService'], function (app) {
+define(['app', 'services/SpinnerService', 'services/RecipeService', 'services/InputService', 'directives/onFinishRender'], function (app) {
 	'use strict';
 
 	/* Controllers */
@@ -42,11 +42,15 @@ define(['app', 'services/SpinnerService', 'services/RecipeService', 'services/In
 						});
 					});
 
-				}, SpinnerService.SIM_TIME);
+				});
 			};
 
 			$scope.purchase = function() {
 				window.location.href = '#/confirm';
 			};
+
+			$scope.$on('ngRepeatFinished', function(){
+				
+			});
 	}]);
 });
