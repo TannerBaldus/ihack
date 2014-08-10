@@ -3,10 +3,25 @@ define(['app', 'services/SpinnerService', 'services/RecipeService', 'services/In
 
 	/* Controllers */
 
-	return app.controller('DisplayContoller', ['$scope', '$timeout', 'SpinnerService', 'RecipeService', 'InputService',
+	return app.controller('DisplayController', ['$scope', '$timeout', 'SpinnerService', 'RecipeService', 'InputService',
 		function ($scope, $timeout, SpinnerService, RecipeService, InputService) {
 			$scope.recipes = RecipeService.get();
 			$scope.spinner = null;
+			$scope.nospin = true;
+
+			$scope.$on('spin.start', function(){
+				// hide buttons
+				$timeout(function(){
+					$scope.nospin = false;
+				});
+			});
+
+			$scope.$on('spin.end', function(){
+				// hide buttons
+				$timeout(function(){
+					$scope.nospin = true;
+				});
+			});
 
 			$scope.research = function() {
 				$scope.recipes = [];
@@ -20,18 +35,18 @@ define(['app', 'services/SpinnerService', 'services/RecipeService', 'services/In
 					})
 					.done(function (data){
 						RecipeService.set(data);
-						if($scope.spinner) $scope.spinner.stop();
+						if($scope.spinner) SpinnerService.stop($scope.spinner);
 						$timeout(function(){
 							$scope.recipes = RecipeService.get();
 							$scope.$apply();
 						});
 					});
 
-				}, 5000);
+				}, SpinnerService.SIM_TIME);
 			};
 
 			$scope.purchase = function() {
-
+				window.location.href = '#/confirm';
 			};
 	}]);
 });

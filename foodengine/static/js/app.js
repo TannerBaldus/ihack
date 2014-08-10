@@ -1,8 +1,8 @@
 /*global define*/
 'use strict';
 
-define(['angular', 'angularRoute', 'angularStorage'], function (angular) {
-	return angular.module('app', ['ngRoute', 'ngStorage'])
+define(['angular', 'angularRoute'], function (angular) {
+	return angular.module('app', ['ngRoute'])
 		.config(['$interpolateProvider', function($interpolateProvider) {
 			$interpolateProvider.startSymbol('[[');
 			$interpolateProvider.endSymbol(']]');

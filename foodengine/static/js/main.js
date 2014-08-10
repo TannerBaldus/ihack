@@ -5,7 +5,6 @@ require.config({
 	paths: {
 		angular: '../lib/angular/angular',
 		angularRoute: '../lib/angular/angular-route',
-		angularStorage: '../lib/angular/angular-storage',
 		foundation: '../lib/foundation/foundation.min',
 		jquery: '../lib/jquery/jquery-1.11.1.min',
 		modernizr: '../lib/vendor/modernizr'
@@ -15,8 +14,7 @@ require.config({
 		'angular': {
 			exports: 'angular'
 		},
-		'angularRoute': ['angular'],
-		'angularStorage': ['angular']
+		'angularRoute': ['angular']
 	}
 });
 

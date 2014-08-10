@@ -3,7 +3,8 @@ define(['app'], function (app) {
 
 	/* Controllers */
 
-	app.service('SpinnerService', function() {
+	app.service('SpinnerService', function($rootScope) {
+		this.SIM_TIME = 5000;
 		this.init = function(target){
 			var opts = {
 			  lines: 17, // The number of lines to draw
@@ -23,8 +24,13 @@ define(['app'], function (app) {
 			  top: 'auto', // Top position relative to parent in px
 			  left: 'auto' // Left position relative to parent in px
 			};
-			
+			$rootScope.$broadcast('spin.start');
 			return new Spinner(opts).spin(target);
+		};
+
+		this.stop = function(spinner) {
+			spinner.stop();
+			$rootScope.$broadcast('spin.end');
 		};
 	});
 

@@ -1,0 +1,57 @@
+<div class="background">
+	<div class="intro row">
+		<div class="columns large-12 large-centered center">
+			<h1>WELCOME TO ALTON!</h1>
+		</div>
+	</div>
+	<div class="search-bar row">
+		<div class="columns large-10 large-centered">
+			<div class="row">
+				<form name="needs" ng-submit="submit(needs)" novalidate>
+					<div class="column large-3 small-12 no-padding custom-30">
+						<div class="row collapse">
+							<div class="small-3 large-2 columns">
+						      <span class="prefix radius"><i class="fa fa-user fa-2x"></i></span>
+						    </div>
+							<div class="small-9 large-10 columns">
+								<input type="text" placeholder="People" name="num" ng-model="num" ng-pattern="/^\d+$/" required>
+							</div>
+							<div class="small-12 large-12 columns">
+								<span class="error" ng-show="needs.num.$error.pattern">Must only contains numbers!</span>
+							</div>
+						</div>
+					</div>
+					<div class="column large-3 small-12 no-padding custom-30">
+						<div class="row collapse">
+							<div class="small-3 large-2 columns">
+						      <span class="prefix no-left-border"><i class="fa fa-dollar fa-2x"></i></span>
+						    </div>
+							<div class="small-9 large-10 columns">
+								<input type="text" placeholder="Budget" name="budge" ng-model="budget" ng-pattern="/^\d+$/" required>
+							</div>
+							<div class="small-12 large-12 columns">
+								<span class="error" ng-show="needs.budge.$error.pattern">Must only contains numbers!</span>
+							</div>
+						</div>
+					</div>
+					<div class="column large-3 small-12 no-padding custom-30">
+						<div class="row collapse">
+							<div class="small-3 large-2 columns">
+						      <span class="prefix no-left-border"><i class="fa fa-cutlery fa-2x"></i></span>
+						    </div>
+							<div class="small-9 large-10 columns">
+								<input type="text" placeholder="Meals" name="meals" ng-model="meals" ng-pattern="/^\d+$/" required>
+							</div>
+							<div class="small-12 large-12 columns">
+								<span class="error" ng-show="needs.meals.$error.pattern">Must only contains numbers!</span>
+							</div>
+						</div>
+					</div>
+					<div class="column large-1 small-12 center no-padding custom-10">
+						<button type="submit" class="button tiny custom-tiny right-radius radius">Search</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

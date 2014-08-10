@@ -1,4 +1,4 @@
-<div>
+<div class="view-container">
 	<div class="recipes-container row">
 		<div class="columns large-4 medium-4 small-12 recipe" ng-repeat="recipe in recipes" on-finish-render>
 			<div class="row">
@@ -10,14 +10,22 @@
 				</div>
 			</div>
 		</div>
-		<div class="large-1 small-1 columns large-centered small-centered spinner"></div>
 	</div>
-	<div class="row">
+	<div class="spinner-container row">
+		<div class="large-1 small-1 columns large-centered small-centered spinner">
+		</div>
+	</div>
+	<div class="message row">
+		<div class="columns large-12 small-12 center">
+			<p></p>
+		</div>
+	</div>
+	<div class="row" ng-show="nospin">
 		<div class="columns large-6 medium-6 small-6 center">
 			<button ng-click="research()">Search</button>
 		</div>
 		<div class="columns large-6 medium-6 small-6 center">
-			<button ng-click="purchase">Buy Now</button>
+			<button ng-click="purchase()">Buy Now</button>
 		</div>
 	</div>
 </div>

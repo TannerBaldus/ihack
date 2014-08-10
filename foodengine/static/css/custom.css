@@ -44,8 +44,12 @@ body.background {
 /*  	height: 100%;*/
 }
 
+
+.view-container {
+	padding-top: 5em;
+}
+
 .recipes-container {
-	margin-top: 5em;
 	margin-bottom: 5em;
 }
 
@@ -83,6 +87,7 @@ body.background {
 
 .spinner-container {
 	margin-top: 5em;
+	margin-bottom: 5em;
 }
 
 span.prefix {
