@@ -27,7 +27,7 @@ def dummy_data(request):
 
 @csrf_exempt
 def search(request):
-	recipes = Recipe.objects.random_group()
+	recipes = Recipe.objects.good_pic_group()
 	data = serializers.serialize('json', recipes)
 	return HttpResponse(data, mimetype='application/json')
 
