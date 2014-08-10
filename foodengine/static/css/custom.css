@@ -62,6 +62,10 @@ body.background {
 	margin-bottom: 5em;
 }
 
+.recipes-container p.title {
+	height: 50px;
+}
+
 .recipes-container [class*="column"]+[class*="column"]:last-child{
 	float: left !important;
 }
