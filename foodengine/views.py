@@ -1,6 +1,8 @@
 from django.shortcuts import render,render_to_response
 from django.http import HttpResponse
 from django.template.context import RequestContext
+from django.core import serializers
+from foodengine.models import Recipe
 try:
 	import simplejson as json
 except Exception:
@@ -22,4 +24,7 @@ def dummy_data(request):
 
 
 def search(request):
-	pass
+	recipes = Recipe.objects.random_group()
+	data = serializers.serialize('json', recipes)
+	return HttpResponse(data, mimetype='application/json')
+

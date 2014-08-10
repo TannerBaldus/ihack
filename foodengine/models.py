@@ -13,6 +13,7 @@ class RecipeManager(models.Manager):
     #     recipes = self.filter(servings__in=servings_multiples)
     #     title_combos = [combo for combo in itertools.combinations(init_recipe.title)
 
+
     def  recipes_by_servings(self,people,meals):
         """Returns a queryset of recipes with proper serving multiples"""
         serving_multiples = range(people,(people*meals)+1,people)
@@ -20,7 +21,22 @@ class RecipeManager(models.Manager):
 
 
 
-    def get_random_group(self,people,meals):
+    def random_group(self):
+
+        index = lambda count : random.randint(0,count)
+        recipe_count = self.count()
+        ids = [index(recipe_count) for i in range(6)]
+        return Recipe.objects.filter(id__in=ids)
+        
+
+
+
+
+
+
+
+
+    def get_random_serving_group(self,people,meals):
         """ """
         target_servings = people*meals
         total_servings = 0
@@ -45,7 +61,7 @@ class Recipe(models.Model):
     description = models.TextField(null=True)
     title = models.CharField(max_length=256)
     image_url = models.TextField(null=True)
-    servings = models.IntegerField()
+    servings = models.IntegerField(default=4)
     objects = RecipeManager()
 
     def __unicode__(self):
@@ -64,7 +80,7 @@ class Ingredient(models.Model):
 
 
 @transaction.atomic
-def update_from_recipe_json(recipe_json):
+def update_from_wikia_json(recipe_json):
     """Creates DB entries from wikia recipes json """
 
     for recipe in recipe_json:
@@ -78,11 +94,14 @@ def update_from_recipe_json(recipe_json):
         ingredeints = recipe.get("ingredients")
 
         ingredient_ids = []
-        for ingredient_name in ingredients:
-            ingredient = Ingredient.get_or_create(name=ingredient_name)
-            ingredient_ids += [ingredient.id]
+        for ingredient_name in ingredeints:
+            # print "in name", ingredient_name
+            ingredient = Ingredient.objects.get_or_create(name=ingredient_name)
+            # print "in instance", ingredient
+            ingredient_ids += [ingredient[0].id]
 
-        recipe.ingredient_set.add(*ingredient_ids)
+        recipe_model.ingredients.add(*ingredient_ids)
+        # print recipe_model.ingredients.all()
 
 
 

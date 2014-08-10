@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^$', views.main, name='main'),
     url(r'^admin/', include(admin.site.urls)),
     url( r'^dummy$', views.dummy_data),
+    url(r'^search$',views.search),
 )
