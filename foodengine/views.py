@@ -14,7 +14,8 @@ def main(request):
 	return render_to_response(template, {}, RequestContext(request))
 
 def dummy_data(request):
-	data = {"title":"Fake Recipe Title","image_url":"https://i.imgur.com/skSpO.jpg"}
+	fake_entry = {"title":"Fake Recipe Title","image_url":"https://i.imgur.com/skSpO.jpg"}
+	data = [fake_entry*5]
 	data = json.dumps(data)
 	return HttpResponse(data, mimetype='application/json')
 

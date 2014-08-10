@@ -1,0 +1,206 @@
+@font-face {
+	font-family: 'Arizonia-Regular';
+	src: url('../font/Arizonia-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'KaushanScript-Regular';
+	src: url('../font/KaushanScript-Regular.otf') format('opentype');
+}
+
+
+@font-face {
+	font-family: 'Cabin-SemiBold';
+	src: url('../font/Cabin-SemiBold.otf') format('opentype');
+}
+
+
+@font-face {
+	font-family: 'Cabin-Bold';
+	src: url('../font/Cabin-Bold.otf') format('opentype');
+}
+
+
+h1, h2, h3, h4, h5, h6, p{
+	font-family: Cabin-Bold;
+}
+
+nav.top-bar h2 {
+	font-family: KaushanScript-Regular;
+	color: #ffffff;
+}
+
+nav.top-bar {
+	padding-left: 1em;
+	max-width: 100em !important;
+}
+
+body {
+	background: url(../img/background.jpg) no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+/*  	height: 100%;*/
+}
+
+.center {
+	text-align: center;
+}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+.button.tiny.custom-tiny {
+	font-size: 0.85rem;
+}
+
+.intro {
+	padding: 15em 0 2em 0;
+}
+
+.intro h1 {
+	color: #ffffff;
+}
+
+.spinner-container {
+	margin-top: 5em;
+}
+
+span.prefix {
+	padding-top: 0.5em;
+/*	background: #ffffff !important;*/
+	border-right-style: none;
+}
+
+.fa-2x {
+	font-size: 1.8em !important;
+}
+
+.learn-more {
+	margin-top: 5em;
+}
+
+.no-left-border{
+	border-left-style: none;
+}
+
+
+@media only screen
+and (min-width: 321px) {
+	.large-3.custom-30 {
+		width: 30% !important;
+	}
+
+	.large-1.custom-10 {
+		width: 10% !important;
+	}
+
+	.button.right-radius {
+		border-radius: 0px;
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+
+	section.right-small {
+		display: none;
+	}
+	nav.top-bar {
+		margin: 0 !important;
+		padding-bottom: 3em !important;
+	}
+
+	nav.top-bar h2{
+		font-size: 2rem !important;
+		color: #5da423;
+	}
+
+	.intro h1 {
+		font-size: 5em !important;
+	}
+
+}
+
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+	.search-bar.row{
+		width: 90% !important;
+	}
+}
+
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) {
+/* Styles */
+	.search-bar.row{
+		width: 90% !important;
+	}
+}
+
+/* iPhone 5 in landscape ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : landscape) { 
+	/* STYLES GO HERE */
+	.large-3.custom-30 {
+		width: 33% !important;
+	}
+	.large-1.custom-10 {
+		float: none !important;
+		width: 100% !important;
+	}
+
+	.intro h1 {
+		font-size: 3rem !important;
+	}
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+	.search-bar.row{
+		width: 95% !important;
+	}
+	.button.tiny.custom-tiny {
+		font-size: 2rem;
+	}
+	.search-bar input {
+		border-radius: 0px;
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+	.search-bar span.prefix {
+		border-left-style: solid;
+		border-radius: 0px;
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+	}
+	.intro h1 {
+		font-size: 2.5rem;
+	}
+
+	body {
+		background: none !important;
+	}
+
+	div.background {
+		background: url(../img/background.jpg) no-repeat;
+		-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	  	background-size: cover;
+	  	height: 100%;
+	}
+
+	.intro {
+		padding: 3em 0 2em 0 !important;
+	}
+}
