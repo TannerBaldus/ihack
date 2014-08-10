@@ -48,9 +48,5 @@ define(['app', 'services/SpinnerService', 'services/RecipeService', 'services/In
 			$scope.purchase = function() {
 				window.location.href = '#/confirm';
 			};
-
-			$scope.$on('ngRepeatFinished', function(){
-				
-			});
 	}]);
 });

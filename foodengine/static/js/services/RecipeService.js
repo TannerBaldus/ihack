@@ -21,6 +21,7 @@ define(['app', 'modernizr'], function (app) {
 			for (var i=0; i<data.length; i++){
 				var fields = data[i].fields;
 				fields.image_url = fields.image_url.replace('/thumb', '');
+				fields.link_path = fields.title.replace(/\s/g, '_');
 				recipes.push(fields);
 			}
 			if (Modernizr.localstorage) {

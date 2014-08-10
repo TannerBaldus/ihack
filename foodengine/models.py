@@ -65,13 +65,6 @@ class RecipeManager(models.Manager):
         titles = [random.choice(good_items) for i in range(6)]
         return Recipe.objects.filter(title__in=titles)
 
-
-
-
-
-
-
-
     def get_random_serving_group(self,people,meals):
         """ """
         target_servings = people*meals

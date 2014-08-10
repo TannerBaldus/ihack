@@ -5,11 +5,19 @@ define(['app', 'services/SpinnerService', 'services/RecipeService', 'services/In
 
 	return app.controller('ConfirmController', ['$scope', '$timeout', 'SpinnerService', 'RecipeService', 'InputService',
 		function ($scope, $timeout, SpinnerService, RecipeService, InputService) {
-			$scope.status = 'We are processing your orders now';
+			var stores = ['AmazonFresh', 'Instacart'];
+			$scope.status = 'We are processing your orders now on ' + stores[Math.floor(Math.random() * 2)];
+
 			$scope.spinner = SpinnerService.init($('.spinner')[0]);
+			$scope.done = false;
 			$timeout(function(){
-				$scope.status = 'Order Success';
-				$scope.spinner.stop();
+				$scope.status = 'Order Succeeded';
+				SpinnerService.stop($scope.spinner);
+				$scope.done = true;
 			}, SpinnerService.SIM_TIME);
+
+			$scope.back = function(){
+				window.location.href = '#/home';
+			};
 	}]);
 });
